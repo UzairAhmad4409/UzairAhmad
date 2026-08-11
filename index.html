@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uzair Ahmad | Unity Game Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Uzair Ahmad, a Unity Game Developer specializing in gameplay programming, multiplayer systems, PlayFab, Photon, UI/UX and mobile/WebGL game development."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Uzair Ahmad | Unity Game Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Uzair Ahmad, a Unity Game Developer specializing in gameplay programming, multiplayer systems, PlayFab, Photon, UI/UX and mobile/WebGL game development."
+    />
+    <meta property="og:image" content="favicon/favicon.svg" />
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="bg-atmosphere" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-orb bg-orb-1"></div>
+      <div class="bg-orb bg-orb-2"></div>
+    </div>
+
+    <header class="site-header" id="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="nav-brand" href="#home">Uzair <span>Ahmad</span></a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Open menu"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" data-nav>Home</a></li>
+          <li><a href="#projects" data-nav>Projects</a></li>
+          <li><a href="#services" data-nav>Services</a></li>
+          <li><a href="#skills" data-nav>Skills</a></li>
+          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="#contact" data-nav>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HERO — cinematic composition -->
+      <section class="hero" id="home" aria-label="Introduction">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="assets/images/hero/hero-bg.png"
+            alt=""
+            width="1920"
+            height="1080"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="hero-media-scrim"></div>
+        </div>
+        <canvas
+          class="hero-particles"
+          id="hero-particles"
+          aria-hidden="true"
+        ></canvas>
+        <div class="hero-glow hero-glow-cyan" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-blue" aria-hidden="true"></div>
+
+        <div class="container hero-stage">
+          <div class="hero-content hero-animate">
+            <p class="section-eyebrow">Portfolio</p>
+            <h1 class="hero-name">
+              Uzair <span class="accent">Ahmad</span>
+            </h1>
+            <p class="hero-title">Unity Game Developer</p>
+            <p class="hero-desc">
+              I build engaging games and interactive experiences with Unity,
+              turning ideas into playable realities through gameplay
+              programming, multiplayer systems, backend integration, and
+              intuitive UI/UX. With almost 3 years of experience, I’m driven by
+              curiosity, continuous learning, and the challenge of building
+              something better with every project.
+            </p>
+            <div class="btn-group hero-actions">
+              <a class="btn btn-primary" href="#projects"
+                >View My Projects <span aria-hidden="true">→</span></a
+              >
+              <a
+                class="btn btn-secondary"
+                id="hero-cv"
+                href="assets/Uzair-Ahmad-CV.pdf"
+                download
+                >Download CV <span aria-hidden="true">↓</span></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-social" id="hero-social" aria-label="Social links">
+          <a
+            class="btn btn-secondary hero-link-btn"
+            id="hero-linkedin"
+            href="https://www.linkedin.com/in/uzair-ahmad-a23929247"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            class="btn btn-secondary hero-link-btn"
+            id="hero-github"
+            href="https://github.com/UzairAhmad4409"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 2C6.477 2 2 6.486 2 12.021c0 4.425 2.865 8.18 6.839 9.504.5.093.682-.217.682-.483 0-.237-.009-.866-.013-1.7-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.621.069-.608.069-.608 1.004.071 1.532 1.033 1.532 1.033.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.952 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.56 9.56 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.944.359.31.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.025 10.025 0 0 0 22 12.021C22 6.486 17.523 2 12 2z"
+              />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </aside>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="section-eyebrow">Selected Work</p>
+            <h2 class="section-title" id="projects-title">Featured Projects</h2>
+            <p class="section-lead">
+              A collection of games and prototypes where gameplay, creativity,
+              and technology come together.
+            </p>
+          </header>
+          <div class="projects-grid" id="projects-grid">
+            <!-- Rendered from projects.js -->
+          </div>
+          <div class="projects-cta reveal">
+            <a class="btn btn-primary projects-all-btn" href="projects.html"
+              >All Projects</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES / WHAT I DO -->
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="section-eyebrow">Features</p>
+            <h2 class="section-title" id="services-title">
+              Crafting Interactive Worlds
+            </h2>
+            <p class="section-lead">
+              Designing and developing games, multiplayer systems, and immersive
+              experiences that bring ideas to life.
+            </p>
+          </header>
+
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Game Development</h3>
+              <p>
+                I develop engaging 2D and 3D games in Unity across a wide range
+                of genres, including hyper-casual, hybrid-casual, idle, tycoon,
+                simulation, shooting, and RPG games. I also develop immersive AR
+                and VR experiences with interactive gameplay and optimized user
+                experiences.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Multiplayer &amp; Backend</h3>
+              <p>
+                I build real-time multiplayer experiences using Photon PUN,
+                along with backend integrations using PlayFab and related
+                services. My experience includes authentication, player data,
+                cloud services, leaderboards, and other online game systems.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>3D App Development</h3>
+              <p>
+                I develop interactive 3D applications with Unity, including
+                Digital Twins, fitness and workout applications, and other
+                immersive experiences. I can integrate advanced features such as
+                human tracking, interactive 3D environments, and real-time user
+                interactions.
+              </p>
+            </article>
+
+            <article class="service-card reveal">
+              <div class="service-icon" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>UI/UX &amp; Game Systems</h3>
+              <p>
+                I design and implement intuitive game UI/UX and core gameplay
+                systems, including inventories, progression, character systems,
+                shops, quests, animations, and responsive interfaces for mobile,
+                PC, and WebGL platforms.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS / EXPERIENCE (tabbed like reference resume) -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="section-eyebrow">Resume</p>
+            <h2 class="section-title" id="skills-title">Skills &amp; Experience</h2>
+            <p class="section-lead">
+              Tools I use to ship games — and the work that shaped how I build
+              them. Download my CV anytime from the Resume tab.
+            </p>
+          </header>
+
+          <div class="resume-tabs reveal" role="tablist" aria-label="Skills, experience and resume">
+            <button
+              type="button"
+              class="resume-tab is-active"
+              role="tab"
+              id="tab-skills"
+              aria-selected="true"
+              aria-controls="panel-skills"
+              data-tab="skills"
+            >
+              Skills
+            </button>
+            <button
+              type="button"
+              class="resume-tab"
+              role="tab"
+              id="tab-experience"
+              aria-selected="false"
+              aria-controls="panel-experience"
+              data-tab="experience"
+            >
+              Experience
+            </button>
+            <button
+              type="button"
+              class="resume-tab"
+              role="tab"
+              id="tab-resume"
+              aria-selected="false"
+              aria-controls="panel-resume"
+              data-tab="resume"
+            >
+              Resume
+            </button>
+          </div>
+
+          <div
+            class="resume-panel-tab is-active"
+            id="panel-skills"
+            role="tabpanel"
+            aria-labelledby="tab-skills"
+          >
+            <div class="skills-grid">
+              <article class="skill-card reveal">
+                <h3>Game Development</h3>
+                <ul class="skill-tags">
+                  <li class="tag">Unity</li>
+                  <li class="tag">C#</li>
+                  <li class="tag">2D Development</li>
+                  <li class="tag">2.5D Development</li>
+                  <li class="tag">3D Development</li>
+                  <li class="tag">Gameplay Programming</li>
+                  <li class="tag">Game Systems</li>
+                  <li class="tag">Character Controllers</li>
+                  <li class="tag">Animation Systems</li>
+                </ul>
+              </article>
+
+              <article class="skill-card reveal">
+                <h3>Multiplayer</h3>
+                <ul class="skill-tags">
+                  <li class="tag">Photon PUN</li>
+                  <li class="tag">Mirror</li>
+                </ul>
+              </article>
+
+              <article class="skill-card reveal">
+                <h3>Backend</h3>
+                <ul class="skill-tags">
+                  <li class="tag">PlayFab</li>
+                  <li class="tag">Firebase</li>
+                  <li class="tag">Authentication</li>
+                </ul>
+              </article>
+
+              <article class="skill-card reveal">
+                <h3>Platforms</h3>
+                <ul class="skill-tags">
+                  <li class="tag">Android</li>
+                  <li class="tag">iOS</li>
+                  <li class="tag">WebGL</li>
+                  <li class="tag">PC</li>
+                </ul>
+              </article>
+
+              <article class="skill-card reveal">
+                <h3>Tools</h3>
+                <ul class="skill-tags">
+                  <li class="tag">Git</li>
+                  <li class="tag">Visual Studio</li>
+                  <li class="tag">Jira</li>
+                  <li class="tag">Trello</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <div
+            class="resume-panel-tab"
+            id="panel-experience"
+            role="tabpanel"
+            aria-labelledby="tab-experience"
+            hidden
+          >
+            <div class="experience-list" id="experience-list">
+              <!-- Cinematic timeline rendered by experience-timeline.js -->
+            </div>
+          </div>
+
+          <div
+            class="resume-panel-tab"
+            id="panel-resume"
+            role="tabpanel"
+            aria-labelledby="tab-resume"
+            hidden
+          >
+            <div class="resume-panel">
+              <p class="section-eyebrow">CV</p>
+              <h2 class="section-title" id="resume-title">Resume</h2>
+              <p>
+                Interested in working together? Download my latest resume to
+                learn more about my experience, skills and projects.
+              </p>
+              <div class="btn-group">
+                <a
+                  class="btn btn-primary"
+                  id="resume-download"
+                  href="assets/Uzair-Ahmad-CV.pdf"
+                  download
+                  >Download CV</a
+                >
+                <a
+                  class="btn btn-secondary"
+                  id="resume-view"
+                  href="assets/Uzair-Ahmad-CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View / Open CV</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="section-eyebrow">Profile</p>
+            <h2 class="section-title" id="about-title">About Me</h2>
+          </header>
+
+          <div class="about-layout">
+            <div class="about-text reveal">
+              <p class="about-lead">
+                Building worlds where ideas become interactive experiences.
+              </p>
+              <p>
+                I'm Uzair Ahmad, a Unity Game Developer with almost 3 years of
+                experience creating games, interactive experiences, and
+                multiplayer systems.
+              </p>
+              <p>
+                I enjoy turning ideas into engaging, playable experiences—from
+                gameplay mechanics and progression systems to multiplayer
+                features, backend integration, and intuitive game interfaces.
+                I've worked across genres including idle, simulation, tycoon,
+                shooting, RPG, and casual games, as well as interactive 3D
+                applications.
+              </p>
+              <p>
+                My core expertise includes Unity, C#, Photon PUN, PlayFab,
+                Firebase, multiplayer development, game systems, and UI/UX. I
+                enjoy solving technical challenges and finding practical ways to
+                bring creative concepts to life.
+              </p>
+              <p>
+                But I'm not just a developer—I'm a continuous learner.
+                Technology and game development are constantly evolving, and I
+                believe there's always something new to explore, improve, and
+                build. I enjoy experimenting with new tools, learning new
+                techniques, and pushing myself to create better experiences with
+                every project.
+              </p>
+              <p class="about-closing">
+                I build. I learn. I experiment. And I keep getting better. 🚀
+              </p>
+            </div>
+
+            <aside class="about-focus reveal" aria-label="Profile photo">
+              <div class="about-focus-glow"></div>
+              <div class="about-focus-ring about-focus-ring-outer"></div>
+              <div class="about-focus-ring about-focus-ring-inner"></div>
+              <div class="about-focus-photo">
+                <img
+                  src="assets/images/profile/profile.jpg"
+                  alt="Uzair Ahmad"
+                  width="320"
+                  height="320"
+                  loading="lazy"
+                  data-profile-fallback
+                />
+                <div class="about-focus-photo-placeholder" hidden>
+                  <span>Your Photo</span>
+                  <small>assets/images/profile/profile.jpg</small>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section
+        class="section contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container">
+          <header class="section-header reveal">
+            <p class="section-eyebrow">Contact</p>
+            <h2 class="section-title" id="contact-title">
+              Let's Build Something Great
+            </h2>
+            <p class="section-lead">
+              Have a game project, development opportunity or collaboration in
+              mind? I'd be happy to discuss it.
+            </p>
+          </header>
+
+          <div class="contact-layout reveal">
+            <form
+              class="contact-form"
+              id="contact-form"
+              novalidate
+              aria-label="Send a message"
+            >
+              <!-- Honeypot — leave empty (spam protection) -->
+              <input
+                type="text"
+                name="_gotcha"
+                class="contact-honeypot"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
+              <div class="contact-field">
+                <label for="contact-name">Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-email">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-subject">Subject</label>
+                <input
+                  type="text"
+                  id="contact-subject"
+                  name="subject"
+                  required
+                  placeholder="Project inquiry"
+                />
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell me about your project or opportunity..."
+                ></textarea>
+              </div>
+
+              <div class="contact-form-actions">
+                <button class="btn btn-primary" type="submit" id="contact-submit">
+                  Send Message
+                </button>
+                <a
+                  class="btn btn-whatsapp"
+                  id="contact-whatsapp-form"
+                  href="#contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Chat on WhatsApp
+                </a>
+              </div>
+              <p
+                class="contact-status"
+                id="contact-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-name">Uzair Ahmad</p>
+        <p class="footer-title">Unity Game Developer</p>
+        <p class="footer-tags">
+          Unity • C# • Game Development
+        </p>
+        <div class="footer-social" id="footer-social" aria-label="Social links">
+          <!-- Filled by script.js -->
+        </div>
+        <p class="footer-copy">© 2026 Uzair Ahmad. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/experience.js"></script>
+    <script src="js/experience-timeline.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

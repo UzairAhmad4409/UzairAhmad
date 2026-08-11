@@ -1,0 +1,9 @@
+# Add your CV PDF here
+
+Replace this note by placing your resume file at:
+
+    assets/Uzair-Ahmad-CV.pdf
+
+Or update the path in `js/config.js` (`cv` field).
+
+The Download CV / View CV buttons already point to that file.

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace YOUR_USERNAME with your GitHub username after deploying to GitHub Pages
+Sitemap: https://YOUR_USERNAME.github.io/sitemap.xml
