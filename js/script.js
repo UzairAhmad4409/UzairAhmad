@@ -508,6 +508,12 @@
       try {
         // FormSubmit — free email delivery for static sites (no backend).
         // First submission sends a confirmation link to your Gmail — click it once.
+        if (window.location.protocol === "file:") {
+          throw new Error(
+            "Open the site via a local server or your live URL — FormSubmit does not work from file://"
+          );
+        }
+
         const response = await fetch(
           `https://formsubmit.co/ajax/${encodeURIComponent(toEmail)}`,
           {
@@ -524,28 +530,40 @@
               _subject: `Portfolio contact: ${subject}`,
               _template: "table",
               _captcha: "false",
+              _url: window.location.href,
             }),
           }
         );
 
         const data = await response.json().catch(() => ({}));
+        const apiMessage =
+          typeof data.message === "string" ? data.message.trim() : "";
+        const failed =
+          !response.ok ||
+          data.success === false ||
+          data.success === "false";
 
-        if (!response.ok) {
-          throw new Error(data.message || "Could not send message.");
+        if (failed) {
+          throw new Error(apiMessage || "Could not send message.");
         }
+
+        const needsActivation =
+          /activat/i.test(apiMessage) || /confirm/i.test(apiMessage);
 
         setContactStatus(
           status,
-          "Message sent — check your Gmail. If this is the first time, confirm the FormSubmit email first.",
+          needsActivation
+            ? `Check ${toEmail} (and Spam) for a FormSubmit activation email, then click Activate Form once.`
+            : "Message sent — check your Gmail inbox (and Spam).",
           "success"
         );
         form.reset();
       } catch (err) {
-        setContactStatus(
-          status,
-          "Could not send right now. Try again, or use Email Me below.",
-          "error"
-        );
+        const detail =
+          err && typeof err.message === "string" && err.message
+            ? err.message
+            : "Could not send right now. Try again later.";
+        setContactStatus(status, detail, "error");
       } finally {
         if (submitBtn) {
           submitBtn.disabled = false;

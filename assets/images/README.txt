@@ -10,7 +10,7 @@ Place your screenshots and cover art in these folders:
 
 Suggested profile path (About section):
 
-- assets/images/profile/profile.jpg
+- assets/images/profile/profile.jpeg
 
 Suggested filenames (already referenced in js/projects.js):
 
