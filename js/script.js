@@ -47,11 +47,16 @@
     if (!cfg) return;
 
     const cvPath = cfg.cv || "assets/Uzair-Ahmad-CV.pdf";
+    const cvFileName = cvPath.split("/").pop() || "Uzair-Ahmad-CV.pdf";
 
-    ["hero-cv", "resume-download", "resume-view"].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) el.setAttribute("href", cvPath);
-    });
+    const resumeView = document.getElementById("resume-view");
+    if (resumeView) {
+      resumeView.setAttribute("href", cvPath);
+      resumeView.setAttribute("target", "_blank");
+      resumeView.setAttribute("rel", "noopener noreferrer");
+    }
+
+    setupCvDownloadButtons(cvPath, cvFileName);
 
     const heroSocial = document.getElementById("hero-social");
     if (heroSocial) {
@@ -105,6 +110,109 @@
         );
       }
     }
+  }
+
+  function setupCvDownloadButtons(cvPath, cvFileName) {
+    const buttons = ["hero-cv", "resume-download"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!buttons.length) return;
+
+    const absoluteCvUrl = new URL(cvPath, window.location.href).href;
+    let blobUrl = null;
+    let ready = false;
+
+    buttons.forEach((el) => {
+      el.setAttribute("href", absoluteCvUrl);
+      el.setAttribute("download", cvFileName);
+      el.removeAttribute("target");
+      el.dataset.cvPath = cvPath;
+      el.dataset.cvName = cvFileName;
+    });
+
+    // Preload as octet-stream so a normal click downloads (no PDF preview)
+    fetch(absoluteCvUrl, { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("CV missing");
+        return res.arrayBuffer();
+      })
+      .then((buffer) => {
+        const blob = new Blob([buffer], { type: "application/octet-stream" });
+        if (blobUrl) URL.revokeObjectURL(blobUrl);
+        blobUrl = URL.createObjectURL(blob);
+        ready = true;
+        buttons.forEach((el) => {
+          el.href = blobUrl;
+          el.setAttribute("download", cvFileName);
+        });
+      })
+      .catch(() => {
+        ready = false;
+      });
+
+    buttons.forEach((el) => {
+      if (el.dataset.downloadBound === "true") return;
+      el.dataset.downloadBound = "true";
+
+      el.addEventListener("click", async (event) => {
+        // Blob link is ready — allow native download attribute to work
+        if (ready && blobUrl) {
+          el.href = blobUrl;
+          el.setAttribute("download", cvFileName);
+          return;
+        }
+
+        event.preventDefault();
+
+        // Chrome/Edge: open Save dialog immediately (keeps user gesture)
+        if (typeof window.showSaveFilePicker === "function") {
+          try {
+            const handle = await window.showSaveFilePicker({
+              suggestedName: cvFileName,
+              types: [
+                {
+                  description: "PDF document",
+                  accept: { "application/pdf": [".pdf"] },
+                },
+              ],
+            });
+            const res = await fetch(absoluteCvUrl, { cache: "no-store" });
+            if (!res.ok) throw new Error("CV missing");
+            const data = await res.blob();
+            const writable = await handle.createWritable();
+            await writable.write(data);
+            await writable.close();
+            return;
+          } catch (err) {
+            if (err && err.name === "AbortError") return;
+            // Fall through to other methods
+          }
+        }
+
+        // Fallback: fetch then trigger download via temporary anchor
+        try {
+          const res = await fetch(absoluteCvUrl, { cache: "no-store" });
+          if (!res.ok) throw new Error("CV missing");
+          const buffer = await res.arrayBuffer();
+          const blob = new Blob([buffer], {
+            type: "application/octet-stream",
+          });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = cvFileName;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          window.setTimeout(() => URL.revokeObjectURL(url), 2000);
+        } catch {
+          window.alert(
+            "Could not download the CV. Use “View / Open CV”, then Save As."
+          );
+        }
+      });
+    });
   }
 
   function buildSocialLinks(cfg, withIcons = true) {
