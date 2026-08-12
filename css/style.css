@@ -550,14 +550,18 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  align-items: stretch;
+  align-items: center;
 }
 
 .hero-link-btn {
-  min-width: 10rem;
+  width: 2.85rem;
+  height: 2.85rem;
+  min-width: 0;
+  padding: 0;
   font-weight: 800;
   justify-content: center;
-  gap: 0.55rem;
+  align-items: center;
+  gap: 0;
   backdrop-filter: blur(12px);
   background: rgba(7, 11, 16, 0.72);
   border: 1px solid rgba(34, 211, 213, 0.45);
@@ -2087,18 +2091,25 @@ button {
   }
 
   .hero-social {
-    position: static;
-    transform: none;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-top: 1.5rem;
-    padding: 0 1.25rem 0.5rem;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0;
+    padding: 0;
   }
 
   .hero {
     min-height: auto;
     padding-top: calc(var(--nav-height) + 2.25rem);
+    padding-bottom: 4.5rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;

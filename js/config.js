@@ -12,7 +12,7 @@ const portfolioConfig = {
 
   // Replace with your real Gmail (e.g. "you@gmail.com")
   // Used for mailto links AND the contact form (FormSubmit)
-  email: "YOUR_EMAIL",
+  email: "uzairahmad4409@gmail.com",
 
   // Optional: after first FormSubmit confirmation, you can keep using this email.
   // Contact form sends messages to this address — no backend needed.
@@ -20,10 +20,10 @@ const portfolioConfig = {
   // Replace with full URLs (e.g. "https://github.com/yourusername")
   github: "https://github.com/UzairAhmad4409",
   linkedin: "https://www.linkedin.com/in/uzair-ahmad-a23929247",
-  fiverr: "YOUR_FIVERR_URL",
+  fiverr: "https://www.fiverr.com/s/bd4Nd11",
 
   // WhatsApp: country code + number, no + or spaces (e.g. "923001234567")
-  whatsapp: "YOUR_WHATSAPP_NUMBER",
+  whatsapp: "+923116920896",
 
   // Place your PDF at this path (or change the path)
   cv: "assets/Uzair-Ahmad-CV.pdf",
