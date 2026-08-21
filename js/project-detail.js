@@ -49,6 +49,9 @@
       }
 
       if (!id) return null;
+      // Strip any leftover path/query fragments from the ID
+      id = String(id).split(/[/?#]/)[0];
+      if (!id) return null;
       return `https://www.youtube.com/embed/${encodeURIComponent(id)}`;
     } catch {
       return null;
@@ -131,9 +134,10 @@
            <iframe
              src="${escapeHtml(embed)}"
              title="${escapeHtml(project.title)} gameplay video"
-             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             frameborder="0"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+             referrerpolicy="strict-origin-when-cross-origin"
              allowfullscreen
-             loading="lazy"
            ></iframe>
          </div>`
       : `<div class="video-embed">

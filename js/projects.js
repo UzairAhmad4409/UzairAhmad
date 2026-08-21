@@ -141,6 +141,33 @@ const projectsData = [
     featured: true,
     rank: 4,
   },
+  {
+    id: "free-jonny",
+    title: "Free Jonny",
+    subtitle: "Puzzle Adventure Game",
+    description:
+      "Free Jonny is an engaging puzzle and adventure game built around helping Jonny escape challenging situations. Players must think strategically, solve interactive puzzles, and make the right choices to progress through each level. With increasing difficulty and creative gameplay scenarios, the game is designed to test problem-solving skills while keeping the experience fun, intuitive, and entertaining. The project focuses on delivering smooth gameplay, responsive interactions, visually engaging environments, and a rewarding level-based progression system.",
+    cover: "assets/images/projects/free-jonny/cover.jpg",
+    screenshots: [],
+    technologies: ["Unity", "C#", "Pixel Art"],
+    features: [
+      "Strategic puzzle solving",
+      "Interactive adventure scenarios",
+      "Level-based progression",
+      "Increasing difficulty",
+      "Smooth, responsive gameplay",
+      "Visually engaging pixel-art environments",
+    ],
+    contribution:
+      "Designed and developed the full puzzle-adventure experience in Unity — gameplay systems, level progression, interactive puzzles, and pixel-art presentation as a completed portfolio project.",
+    status: "Completed / Portfolio Project",
+    inDevelopment: false,
+    video: "https://www.youtube.com/watch?v=JDFCDAbG_dM",
+    demoUrl: "YOUR_GAME_DEMO_URL",
+    githubUrl: "YOUR_GITHUB_URL",
+    featured: true,
+    rank: 5,
+  },
 ];
 
 /** Look up a project by id (used on project.html?id=...) */
