@@ -23,9 +23,73 @@
       .replace(/"/g, "&quot;");
   }
 
+  /** Render multi-paragraph descriptions with optional bullet lists. */
+  function formatDescriptionHtml(text) {
+    if (!text || typeof text !== "string") return "";
+    return text
+      .trim()
+      .split(/\n\n+/)
+      .map((block) => {
+        const lines = block
+          .split(/\n/)
+          .map((l) => l.trim())
+          .filter(Boolean);
+        if (!lines.length) return "";
+
+        const isListItem = (l) => /^[-•*]/.test(l);
+        const listStart = lines.findIndex(isListItem);
+
+        if (listStart !== -1) {
+          const intro = lines.slice(0, listStart);
+          const items = lines.slice(listStart).map((l) =>
+            escapeHtml(l.replace(/^[-•*]\s*/, ""))
+          );
+          const introHtml = intro
+            .map((l) => `<p>${escapeHtml(l)}</p>`)
+            .join("");
+          return `${introHtml}<ul class="feature-list">${items
+            .map((i) => `<li>${i}</li>`)
+            .join("")}</ul>`;
+        }
+
+        if (lines.length === 1) {
+          const line = lines[0];
+          const looksLikeHeading =
+            line.length < 70 &&
+            !/[.!?]$/.test(line) &&
+            !line.includes("→");
+          if (looksLikeHeading) {
+            return `<h3 class="project-overview-heading">${escapeHtml(
+              line
+            )}</h3>`;
+          }
+          return `<p>${escapeHtml(line)}</p>`;
+        }
+
+        return `<p>${lines.map((l) => escapeHtml(l)).join("<br />")}</p>`;
+      })
+      .join("");
+  }
+
   function getQueryId() {
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
+  }
+
+  /** Label Play Demo with platform when the URL is a known store/portal. */
+  function demoPlatformLabel(url) {
+    if (isPlaceholder(url)) return null;
+    try {
+      const host = new URL(url).hostname.replace(/^www\./, "").toLowerCase();
+      if (host.includes("crazygames.com")) return "Play Demo on CrazyGames";
+      if (host.includes("itch.io")) return "Play Demo on itch.io";
+      if (host.includes("play.google.com")) return "Play Demo on Google Play";
+      if (host.includes("apps.apple.com")) return "Play Demo on App Store";
+      if (host.includes("steam")) return "Play Demo on Steam";
+    } catch {
+      /* ignore */
+    }
+    return null;
   }
 
   /**
@@ -140,8 +204,10 @@
       </section>`
       : "";
 
-    const videoBlock = embed
-      ? `<div class="video-embed">
+    const videoSection = embed
+      ? `<section class="project-detail-block">
+        <h2>Gameplay</h2>
+        <div class="video-embed">
            <iframe
              src="${escapeHtml(embed)}"
              title="${escapeHtml(project.title)} gameplay video"
@@ -150,16 +216,16 @@
              referrerpolicy="strict-origin-when-cross-origin"
              allowfullscreen
            ></iframe>
-         </div>`
-      : `<div class="video-embed">
-           <div class="video-placeholder">
-             Gameplay video coming soon.<br />
-             Add a YouTube URL in <code>js/projects.js</code> (<code>video</code> field).
-           </div>
-         </div>`;
+         </div>
+      </section>`
+      : "";
 
     const linkDefs = [
-      { key: "demoUrl", label: "Play Demo", primary: true },
+      {
+        key: "demoUrl",
+        label: project.demoLabel || demoPlatformLabel(project.demoUrl) || "Play Demo",
+        primary: true,
+      },
       { key: "apkUrl", label: "Download APK", primary: true, download: true },
       { key: "playStoreUrl", label: "Google Play", primary: false },
       { key: "appStoreUrl", label: "App Store", primary: false },
@@ -203,7 +269,9 @@
 
       <section class="project-detail-block">
         <h2>Overview</h2>
-        <p>${escapeHtml(project.description)}</p>
+        <div class="project-overview">${formatDescriptionHtml(
+          project.description
+        )}</div>
       </section>
 
       <section class="project-detail-block">
@@ -218,13 +286,12 @@
 
       <section class="project-detail-block">
         <h2>My Contribution</h2>
-        <p>${escapeHtml(project.contribution)}</p>
+        <div class="project-overview">${formatDescriptionHtml(
+          project.contribution
+        )}</div>
       </section>
 
-      <section class="project-detail-block">
-        <h2>Gameplay</h2>
-        ${videoBlock}
-      </section>
+      ${videoSection}
 
       ${screenshotsSection}
 

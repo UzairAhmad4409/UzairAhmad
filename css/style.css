@@ -2002,6 +2002,28 @@ button {
   max-width: 48rem;
 }
 
+.project-overview {
+  max-width: 48rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.project-overview p {
+  margin: 0;
+}
+
+.project-overview-heading {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.65rem 0 0.15rem;
+}
+
+.project-overview .feature-list {
+  margin: 0.15rem 0 0.35rem;
+}
+
 .feature-list {
   display: grid;
   gap: 0.65rem;
