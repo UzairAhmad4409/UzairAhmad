@@ -98,9 +98,11 @@
 
     const embed = youtubeEmbedUrl(project.video);
 
-    const badge = project.inDevelopment
-      ? `<span class="badge-dev">In Development</span>`
-      : "";
+    const statusLabel = project.inDevelopment ? "Development Phase" : "Completed";
+    const statusClass = project.inDevelopment
+      ? "badge-dev project-detail-status"
+      : "badge-completed project-detail-status";
+    const statusBadge = `<span class="${statusClass}">${statusLabel}</span>`;
 
     const features = (project.features || [])
       .map((f) => `<li>${escapeHtml(f)}</li>`)
@@ -184,10 +186,9 @@
       <a class="project-back" href="index.html#projects">← Back to Projects</a>
 
       <header class="project-detail-header">
-        ${badge}
+        ${statusBadge}
         <h1 class="project-detail-title">${escapeHtml(project.title)}</h1>
         <p class="project-detail-subtitle">${escapeHtml(project.subtitle)}</p>
-        <p class="project-detail-status">${escapeHtml(project.status)}</p>
       </header>
 
       <div class="project-hero-media">

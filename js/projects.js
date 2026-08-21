@@ -29,6 +29,10 @@
  *   apkUrl        → Download APK (file path or URL, e.g. "assets/apks/game.apk")
  *   playStoreUrl  → Google Play
  *   appStoreUrl   → App Store
+ *
+ * Status (choose one via inDevelopment):
+ *   inDevelopment: false  → shows "Completed"
+ *   inDevelopment: true   → shows "Development Phase"
  * ============================================================
  */
 const FEATURED_HOME_LIMIT = 4;
@@ -37,31 +41,27 @@ const projectsData = [
   {
     id: "solver",
     title: "Solver",
-    subtitle: "Multiplayer Puzzle & Trivia Game",
+    subtitle: "AI-Powered Multiplayer Trivia Game",
     description:
-      "Solver is a multiplayer puzzle and trivia game developed in Unity, featuring real-time multiplayer gameplay, player authentication and interactive game systems.",
+      "Solver is a fast-paced multiplayer trivia game where knowledge, speed, strategy, and AI come together. Challenge friends, compete with players worldwide, and see who can become the ultimate Solver. With ChatGPT integrated into gameplay, every match brings something new—from clever hints and real-time feedback to unexpected AI interactions. Battle through five rounds of trivia and puzzles, connect with players globally, and chat in real time while you compete.",
     cover: "assets/images/projects/solver/cover.jpg",
-    screenshots: [
-      "assets/images/projects/solver/gameplay-1.jpg",
-      "assets/images/projects/solver/gameplay-2.jpg",
-      "assets/images/projects/solver/gameplay-3.jpg",
-    ],
-    technologies: ["Unity", "C#", "Photon PUN", "PlayFab", "ChatGPT API"],
+    screenshots: [],
+    technologies: ["Unity", "C#", "PlayFab", "ChatGPT API"],
     features: [
-      "Real-time multiplayer gameplay",
-      "Player authentication",
-      "Multiplayer synchronization",
-      "Puzzle and trivia systems",
-      "Player data",
-      "Game UI and progression",
+      "AI-powered trivia experience",
+      "ChatGPT integration",
+      "Fast-paced multiplayer gameplay",
+      "Five rounds of trivia and puzzles",
+      "Global friend-making system",
+      "Real-time multiplayer chat",
+      "Interactive AI feedback and hints",
     ],
     contribution:
-      "Developed core gameplay systems, multiplayer networking with Photon PUN, PlayFab authentication and player data, puzzle/trivia logic, and game UI.",
-    status: "Completed / Portfolio Project",
+      "Developed the Unity multiplayer trivia experience including ChatGPT-powered AI feedback and hints, five-round puzzle/trivia gameplay, real-time multiplayer systems, in-game chat, friend connections, and PlayFab-backed player features.",
     inDevelopment: false,
-    video: "YOUR_YOUTUBE_URL",
-    demoUrl: "YOUR_GAME_DEMO_URL",
-    githubUrl: "YOUR_GITHUB_URL",
+    video: "https://www.youtube.com/watch?v=I5ld6bNjgTk",
+    demoUrl: "",
+    githubUrl: "",
     apkUrl: "",
     playStoreUrl: "",
     appStoreUrl: "",
@@ -88,7 +88,6 @@ const projectsData = [
     ],
     contribution:
       "Built gameplay systems, character controllers, simulation mechanics, and UI/UX for a 2.5D student-life experience in Unity.",
-    status: "Completed / Portfolio Project",
     inDevelopment: false,
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
@@ -119,7 +118,6 @@ const projectsData = [
     ],
     contribution:
       "Developed the Unity WebGL arcade management experience, including gameplay systems and game UI for browser platforms.",
-    status: "Completed / Published Project",
     inDevelopment: false,
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
@@ -152,7 +150,6 @@ const projectsData = [
     ],
     contribution:
       "Prototyping core idle RPG systems including auto-combat, progression, equipment, skills, and backend integration with PlayFab for a vertical mobile experience.",
-    status: "In Development",
     inDevelopment: true,
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
@@ -168,13 +165,9 @@ const projectsData = [
     title: "Free Jonny",
     subtitle: "2D Endless Game",
     description:
-      "Free Jonny is a fast-paced 2D endless adventure game where players guide Jonny through dynamic environments filled with enemies, obstacles, and increasing challenges. The game features multiple unique environments, progressively increasing difficulty, responsive gameplay, and competitive leaderboard support. With engaging pixel-art visuals and endless score-chasing gameplay, Free Jonny delivers a fun and replayable arcade experience that encourages players to survive longer and achieve higher scores."
+      "Free Jonny is a fast-paced 2D endless adventure game where players guide Jonny through dynamic environments filled with enemies, obstacles, and increasing challenges. The game features multiple unique environments, progressively increasing difficulty, responsive gameplay, and competitive leaderboard support. With engaging pixel-art visuals and endless score-chasing gameplay, Free Jonny delivers a fun and replayable arcade experience that encourages players to survive longer and achieve higher scores.",
     cover: "assets/images/projects/free-jonny/cover.jpg",
-    screenshots: [
-      "assets/images/projects/free-jonny/gameplay-1.jpg",
-      "assets/images/projects/free-jonny/gameplay-2.jpg",
-      "assets/images/projects/free-jonny/gameplay-3.jpg",
-    ],
+    screenshots: [],
     technologies: ["Unity", "C#", "Pixel Art"],
     features: [
       "Fast-paced endless gameplay",
@@ -189,11 +182,9 @@ const projectsData = [
       "High-score tracking and competitive gameplay",
       "Smooth and responsive controls",
       "Visually engaging pixel-art environments",
-      ]
-      
+    ],
     contribution:
-      "Designed and developed the complete 2D endless game experience in Unity, including core gameplay mechanics, multiple environments, enemy systems, increasing difficulty, leaderboard integration, and pixel-art visuals as a completed portfolio project."
-    status: "Completed / Portfolio Project",
+      "Designed and developed the complete 2D endless game experience in Unity, including core gameplay mechanics, multiple environments, enemy systems, increasing difficulty, leaderboard integration, and pixel-art visuals as a completed portfolio project.",
     inDevelopment: false,
     video: "https://www.youtube.com/watch?v=JDFCDAbG_dM",
     demoUrl: "",
@@ -203,6 +194,75 @@ const projectsData = [
     appStoreUrl: "",
     featured: true,
     rank: 5,
+  },
+  {
+    id: "card-duel",
+    title: "Card Duel",
+    subtitle: "Multiplayer Card Game",
+    description:
+      "Card Duel is a Multiplayer strategic card-based game developed in Unity using Mirror Networking, featuring dynamic combat mechanics. Players use unique cards with different abilities and attributes to battle enemies strategically—choosing the right cards, managing options, and making tactical decisions to defeat powerful monsters. After each attack, a reward wheel rotates to add chance and strategy, which can grant a reward, trigger an enemy attack, or create another gameplay outcome. The project includes a flexible Inspector-configurable card system, raycast-based interaction, strategic board movement, PlayFab authentication, and a multiplayer-ready architecture.",
+    cover: "assets/images/projects/card-duel/cover.jpg",
+    screenshots: [],
+    technologies: ["Unity", "C#", "Mirror", "PlayFab"],
+    features: [
+      "Strategic card-based combat",
+      "PlayFab authentication and auto-login",
+      "Multiplayer-ready architecture",
+      "Mirror Networking",
+      "Dynamic reward and attack wheel system",
+      "Card attributes: attack, health, and shield",
+      "Configurable special card abilities",
+      "Raycast-based player interaction",
+      "Strategic movement between board locations",
+      "Three unique monsters to defeat",
+      "Health restoration mechanics",
+    ],
+    contribution:
+      "Led the end-to-end development of Card Duel, a complete Unity-based strategic card combat game. Oversaw the design and implementation of core gameplay systems, including dynamic card mechanics with Inspector-configurable abilities, monster encounters, reward-wheel outcomes, raycast-based interactions, and player movement across the game board. Also led the integration of PlayFab for player registration, login, and auto-login, while establishing a scalable architecture to support future multiplayer expansion and additional game features.",
+    inDevelopment: false,
+    video: "https://www.youtube.com/watch?v=8K6zPUA8xF0",
+    demoUrl: "",
+    githubUrl: "",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
+    featured: true,
+    rank: 6,
+  },
+  {
+    id: "blow",
+    title: "Blow",
+    subtitle: "3D Endless Runner Game",
+    description:
+      "Blow is a 3D endless runner where you control a plane with your voice. Built in Unity, the game uses real-time microphone input—every whisper, shout, or blow is analyzed by loudness (RMS amplitude) and turned into flight energy. Whisper and the plane gently glides; get louder and it flies faster, so volume becomes a dynamic controller that affects gameplay in real time. The experience combines audio-driven flight with mobile runner systems including dynamic levels, power-ups, character customization, and competitive scoring.",
+    cover: "assets/images/projects/blow/cover.jpg",
+    screenshots: [],
+    technologies: ["Unity", "C#", "PlayFab", "AdMob", "IAP"],
+    features: [
+      "Voice-controlled flight via microphone input",
+      "Real-time loudness (RMS) to movement mapping",
+      "PlayFab integration and leaderboards",
+      "In-App Purchasing",
+      "AdMob plugin",
+      "Dynamic level design",
+      "Power-ups and boosters",
+      "Character customization",
+      "High-score tracking",
+      "Procedural obstacle generation",
+      "Smooth controls and intuitive UI",
+      "Mobile optimization",
+    ],
+    contribution:
+      "I was responsible for designing and developing the complete game experience in Unity. My role included implementing the voice-controlled gameplay system using real-time microphone input, core gameplay mechanics, procedural obstacle generation, dynamic levels, power-ups, character customization, UI systems, high-score tracking, and mobile optimization. I also integrated PlayFab for leaderboards, In-App Purchasing, and AdMob to create a complete and engaging mobile game experience.",
+    inDevelopment: false,
+    video: "https://www.youtube.com/watch?v=TkY4SXVkir4",
+    demoUrl: "",
+    githubUrl: "",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
+    featured: true,
+    rank: 7,
   },
 ];
 

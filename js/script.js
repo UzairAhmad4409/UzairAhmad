@@ -333,24 +333,18 @@
 
     grid.innerHTML = projects
       .map((p) => {
-        const demoHref = safeHref(p.demoUrl);
-        const demoBtn = demoHref
-          ? `<a class="btn btn-secondary" href="${escapeHtml(
-              demoHref
-            )}" target="_blank" rel="noopener noreferrer">Play Demo</a>`
-          : "";
-
         const badge = p.inDevelopment
-          ? `<span class="badge-dev project-card-badge">In Development</span>`
+          ? `<span class="badge-dev project-card-badge">Development Phase</span>`
           : "";
 
         return `
-          <article class="project-card reveal">
+          <a class="project-card reveal" href="project.html?id=${encodeURIComponent(
+            p.id
+          )}" aria-label="View ${escapeHtml(p.title)} project">
             <div class="project-card-media">
               ${badge}
               ${projectCoverHtml(p)}
               <div class="project-card-overlay">
-                <p class="project-card-status">${escapeHtml(p.status)}</p>
                 <h3 class="project-card-title">${escapeHtml(p.title)}</h3>
                 <p class="project-card-subtitle">${escapeHtml(p.subtitle)}</p>
                 <p class="project-card-desc">${escapeHtml(p.description)}</p>
@@ -359,15 +353,9 @@
                     .map((t) => `<li class="tag">${escapeHtml(t)}</li>`)
                     .join("")}
                 </ul>
-                <div class="project-card-actions">
-                  <a class="btn btn-primary" href="project.html?id=${encodeURIComponent(
-                    p.id
-                  )}">View Project</a>
-                  ${demoBtn}
-                </div>
               </div>
             </div>
-          </article>
+          </a>
         `;
       })
       .join("");
