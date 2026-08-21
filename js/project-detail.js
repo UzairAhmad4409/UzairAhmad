@@ -97,8 +97,6 @@
     }
 
     const embed = youtubeEmbedUrl(project.video);
-    const demoOk = !isPlaceholder(project.demoUrl);
-    const githubOk = !isPlaceholder(project.githubUrl);
 
     const badge = project.inDevelopment
       ? `<span class="badge-dev">In Development</span>`
@@ -112,7 +110,10 @@
       .map((t) => `<li class="tag tag-accent">${escapeHtml(t)}</li>`)
       .join("");
 
-    const screenshots = (project.screenshots || [])
+    const screenshotList = (project.screenshots || []).filter(
+      (src) => src && typeof src === "string" && src.trim() && !isPlaceholder(src)
+    );
+    const screenshotsHtml = screenshotList
       .map(
         (src, i) => `
         <figure>
@@ -128,6 +129,14 @@
       `
       )
       .join("");
+    const screenshotsSection = screenshotList.length
+      ? `<section class="project-detail-block">
+        <h2>Screenshots</h2>
+        <div class="screenshot-gallery">
+          ${screenshotsHtml}
+        </div>
+      </section>`
+      : "";
 
     const videoBlock = embed
       ? `<div class="video-embed">
@@ -147,26 +156,29 @@
            </div>
          </div>`;
 
-    const links = [];
-    if (demoOk) {
-      links.push(
-        `<a class="btn btn-primary" href="${escapeHtml(
-          project.demoUrl
-        )}" target="_blank" rel="noopener noreferrer">Play Demo</a>`
-      );
-    }
-    if (githubOk) {
-      links.push(
-        `<a class="btn btn-secondary" href="${escapeHtml(
-          project.githubUrl
-        )}" target="_blank" rel="noopener noreferrer">View Source</a>`
-      );
-    }
-    if (!links.length) {
-      links.push(
-        `<p class="section-lead" style="margin:0">Demo and source links can be added in <code>js/projects.js</code>.</p>`
-      );
-    }
+    const linkDefs = [
+      { key: "demoUrl", label: "Play Demo", primary: true },
+      { key: "apkUrl", label: "Download APK", primary: true, download: true },
+      { key: "playStoreUrl", label: "Google Play", primary: false },
+      { key: "appStoreUrl", label: "App Store", primary: false },
+      { key: "githubUrl", label: "View Source", primary: false },
+    ];
+
+    const linkButtons = linkDefs
+      .filter(({ key }) => !isPlaceholder(project[key]))
+      .map(({ key, label, primary, download }) => {
+        const href = escapeHtml(project[key]);
+        const cls = primary ? "btn btn-primary" : "btn btn-secondary";
+        const downloadAttr = download ? " download" : "";
+        return `<a class="${cls}" href="${href}" target="_blank" rel="noopener noreferrer"${downloadAttr}>${label}</a>`;
+      });
+
+    const linksSection = linkButtons.length
+      ? `<section class="project-detail-block">
+        <h2>Links</h2>
+        <div class="project-detail-links">${linkButtons.join("")}</div>
+      </section>`
+      : "";
 
     root.innerHTML = `
       <a class="project-back" href="index.html#projects">← Back to Projects</a>
@@ -213,20 +225,9 @@
         ${videoBlock}
       </section>
 
-      <section class="project-detail-block">
-        <h2>Screenshots</h2>
-        <div class="screenshot-gallery">
-          ${
-            screenshots ||
-            `<div class="project-placeholder">Add screenshots in js/projects.js</div>`
-          }
-        </div>
-      </section>
+      ${screenshotsSection}
 
-      <section class="project-detail-block">
-        <h2>Links</h2>
-        <div class="project-detail-links">${links.join("")}</div>
-      </section>
+      ${linksSection}
     `;
 
     bindImageFallbacks(root);

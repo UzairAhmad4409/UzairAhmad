@@ -18,7 +18,17 @@
  *   or https://youtu.be/VIDEO_ID
  * Leave video as "" to hide the gameplay section.
  *
- * Demo / GitHub: leave as YOUR_* placeholders to hide those buttons.
+ * Screenshots: add image paths to show the Screenshots section.
+ *   screenshots: ["assets/images/projects/id/gameplay-1.jpg"]
+ * Use screenshots: [] (or omit) to hide that section entirely.
+ *
+ * Links (detail page) — leave as "" or YOUR_* to hide each button.
+ * The whole Links section hides if none are set:
+ *   demoUrl       → Play Demo
+ *   githubUrl     → View Source
+ *   apkUrl        → Download APK (file path or URL, e.g. "assets/apks/game.apk")
+ *   playStoreUrl  → Google Play
+ *   appStoreUrl   → App Store
  * ============================================================
  */
 const FEATURED_HOME_LIMIT = 4;
@@ -52,6 +62,9 @@ const projectsData = [
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
     githubUrl: "YOUR_GITHUB_URL",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
     featured: true,
     rank: 1,
   },
@@ -80,6 +93,9 @@ const projectsData = [
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
     githubUrl: "YOUR_GITHUB_URL",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
     featured: true,
     rank: 2,
   },
@@ -108,6 +124,9 @@ const projectsData = [
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
     githubUrl: "YOUR_GITHUB_URL",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
     featured: true,
     rank: 3,
   },
@@ -138,33 +157,50 @@ const projectsData = [
     video: "YOUR_YOUTUBE_URL",
     demoUrl: "YOUR_GAME_DEMO_URL",
     githubUrl: "YOUR_GITHUB_URL",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
     featured: true,
     rank: 4,
   },
   {
     id: "free-jonny",
     title: "Free Jonny",
-    subtitle: "Puzzle Adventure Game",
+    subtitle: "2D Endless Game",
     description:
-      "Free Jonny is an engaging puzzle and adventure game built around helping Jonny escape challenging situations. Players must think strategically, solve interactive puzzles, and make the right choices to progress through each level. With increasing difficulty and creative gameplay scenarios, the game is designed to test problem-solving skills while keeping the experience fun, intuitive, and entertaining. The project focuses on delivering smooth gameplay, responsive interactions, visually engaging environments, and a rewarding level-based progression system.",
+      "Free Jonny is a fast-paced 2D endless adventure game where players guide Jonny through dynamic environments filled with enemies, obstacles, and increasing challenges. The game features multiple unique environments, progressively increasing difficulty, responsive gameplay, and competitive leaderboard support. With engaging pixel-art visuals and endless score-chasing gameplay, Free Jonny delivers a fun and replayable arcade experience that encourages players to survive longer and achieve higher scores."
     cover: "assets/images/projects/free-jonny/cover.jpg",
-    screenshots: [],
+    screenshots: [
+      "assets/images/projects/free-jonny/gameplay-1.jpg",
+      "assets/images/projects/free-jonny/gameplay-2.jpg",
+      "assets/images/projects/free-jonny/gameplay-3.jpg",
+    ],
     technologies: ["Unity", "C#", "Pixel Art"],
     features: [
-      "Strategic puzzle solving",
+      "Fast-paced endless gameplay",
+      "Multiple unique environments to explore",
+      "Strategic puzzle-solving challenges",
       "Interactive adventure scenarios",
-      "Level-based progression",
-      "Increasing difficulty",
-      "Smooth, responsive gameplay",
+      "Different enemy types with unique behaviors",
+      "Increasing difficulty as the game progresses",
+      "Dynamic obstacles and challenges",
+      "Level-based progression and unlockable content",
+      "Global leaderboard system",
+      "High-score tracking and competitive gameplay",
+      "Smooth and responsive controls",
       "Visually engaging pixel-art environments",
-    ],
+      ]
+      
     contribution:
-      "Designed and developed the full puzzle-adventure experience in Unity — gameplay systems, level progression, interactive puzzles, and pixel-art presentation as a completed portfolio project.",
+      "Designed and developed the complete 2D endless game experience in Unity, including core gameplay mechanics, multiple environments, enemy systems, increasing difficulty, leaderboard integration, and pixel-art visuals as a completed portfolio project."
     status: "Completed / Portfolio Project",
     inDevelopment: false,
     video: "https://www.youtube.com/watch?v=JDFCDAbG_dM",
-    demoUrl: "YOUR_GAME_DEMO_URL",
-    githubUrl: "YOUR_GITHUB_URL",
+    demoUrl: "",
+    githubUrl: "",
+    apkUrl: "",
+    playStoreUrl: "",
+    appStoreUrl: "",
     featured: true,
     rank: 5,
   },
