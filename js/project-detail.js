@@ -146,7 +146,7 @@
       <div class="project-not-found">
         <h1>Project not found</h1>
         <p>This project id is missing or invalid. Check the URL or return to the portfolio.</p>
-        <a class="btn btn-primary" href="index.html#projects">Back to Projects</a>
+        <a class="btn btn-primary" href="projects.html">Back to Projects</a>
       </div>
     `;
     document.title = "Project Not Found | Uzair Ahmad";
@@ -226,7 +226,7 @@
         label: project.demoLabel || demoPlatformLabel(project.demoUrl) || "Play Demo",
         primary: true,
       },
-      { key: "apkUrl", label: "Download APK", primary: true, download: true },
+      { key: "apkUrl", label: "Download Android APK", primary: true, download: true },
       { key: "playStoreUrl", label: "Google Play", primary: false },
       { key: "appStoreUrl", label: "App Store", primary: false },
       { key: "githubUrl", label: "View Source", primary: false },
@@ -249,7 +249,7 @@
       : "";
 
     root.innerHTML = `
-      <a class="project-back" href="index.html#projects">← Back to Projects</a>
+      <a class="project-back" href="projects.html">← Back to Projects</a>
 
       <header class="project-detail-header">
         ${statusBadge}
