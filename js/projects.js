@@ -49,8 +49,6 @@ A key feature of the game is the integration of ChatGPT directly into the gamepl
     cover: "assets/images/projects/solver/cover.png",
     screenshots: [],
     technologies: [
-      "Unity",
-      "C#",
       "PlayFab",
       "ChatGPT API",
       "Mirror",
@@ -101,7 +99,7 @@ My responsibilities included:
 The game focuses on a progressive Operate → Earn → Upgrade → Expand gameplay loop, where players continuously invest their earnings to grow their entertainment empire. The experience combines player interaction, facility management, customer activity, business progression, resource management, and expansion mechanics.`,
     cover: "assets/images/projects/arcade-tycoon/cover.png",
     screenshots: [],
-    technologies: ["Unity", "C#", "WebGL", "CrazyGamesSdk", "Desktop", "Mobile"],
+    technologies: ["WebGL", "CrazyGamesSdk", "Android", "IOS"],
     features: [
       "Arcade and tycoon gameplay systems",
       "Business progression and expansion",
@@ -145,7 +143,7 @@ My responsibilities included:
       "Free Jonny is a fast-paced 2D endless adventure game where players guide Jonny through dynamic environments filled with enemies, obstacles, and increasing challenges. The game features multiple unique environments, progressively increasing difficulty, responsive gameplay, and competitive leaderboard support. With engaging pixel-art visuals and endless score-chasing gameplay, Free Jonny delivers a fun and replayable arcade experience that encourages players to survive longer and achieve higher scores.",
     cover: "assets/images/projects/free-jonny/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "Pixel Art"],
+    technologies: ["Pixel Art", "Android", "IOS"],
     features: [
       "Fast-paced endless gameplay",
       "Multiple unique environments to explore",
@@ -180,7 +178,7 @@ My responsibilities included:
       "Card Duel is a Multiplayer strategic card-based game developed in Unity using Mirror Networking, featuring dynamic combat mechanics. Players use unique cards with different abilities and attributes to battle enemies strategically—choosing the right cards, managing options, and making tactical decisions to defeat powerful monsters. After each attack, a reward wheel rotates to add chance and strategy, which can grant a reward, trigger an enemy attack, or create another gameplay outcome. The project includes a flexible Inspector-configurable card system, raycast-based interaction, strategic board movement, PlayFab authentication, and a multiplayer-ready architecture.",
     cover: "assets/images/projects/card-duel/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "Mirror", "PlayFab"],
+    technologies: ["Mirror", "PlayFab", "Android", "IOS"],
     features: [
       "Strategic card-based combat",
       "PlayFab authentication and auto-login",
@@ -214,7 +212,7 @@ My responsibilities included:
       "Blow is a 3D endless runner where you control a plane with your voice. Built in Unity, the game uses real-time microphone input—every whisper, shout, or blow is analyzed by loudness (RMS amplitude) and turned into flight energy. Whisper and the plane gently glides; get louder and it flies faster, so volume becomes a dynamic controller that affects gameplay in real time. The experience combines audio-driven flight with mobile runner systems including dynamic levels, power-ups, character customization, and competitive scoring.",
     cover: "assets/images/projects/blow/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "PlayFab", "AdMob", "IAP"],
+    technologies: ["PlayFab", "Android", "IOS"],
     features: [
       "Voice-controlled flight via microphone input",
       "Real-time loudness (RMS) to movement mapping",
@@ -249,7 +247,7 @@ My responsibilities included:
       "Shop Rush 3D is a 3D idle supermarket management game where players start with a small shop and progressively build it into a thriving retail empire. Players manage day-to-day store operations by stocking shelves, serving customers, hiring workers, upgrading facilities, increasing income, and unlocking new areas. The game combines hands-on movement and management with idle progression, creating a satisfying gameplay loop where every upgrade contributes to faster operations, higher profits, and continued business growth. Built in Unity 6, the project supports both desktop and mobile gameplay with simple, intuitive controls.",
     cover: "assets/images/projects/shop-rush-3d/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "WebGL", "CrazyGamesSdk", "Desktop", "Mobile"],
+    technologies: ["WebGL", "CrazyGamesSdk", "Android", "IOS"],
     features: [
       "Idle supermarket management loop",
       "Stock shelves and serve customers",
@@ -302,7 +300,7 @@ I worked on:
 - Integrating explosive attacks and destruction effects to make boss encounters impactful`,
     cover: "assets/images/projects/mega-hole-attack/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "WebGL", "CrazyGamesSdk", "Desktop", "Mobile"],
+    technologies: ["WebGL", "CrazyGamesSdk", "PokiSdk"],
     features: [
       "Black-hole movement and weapon absorption",
       "Collect bullets, rockets, grenades, and ammo",
@@ -347,7 +345,7 @@ My responsibilities included:
 The game combines wave-based combat, base building, weapon progression, resource management, farming, soldier recruitment, loot rewards, and character customization. Players strengthen their defenses, collect resources, unlock powerful weapons, and expand their capabilities to survive increasingly difficult attacks.`,
     cover: "assets/images/projects/base-obby/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "WebGL", "CrazyGamesSdk", "Desktop", "Mobile"],
+    technologies: ["WebGL", "CrazyGamesSdk"],
     features: [
       "Zombie wave survival and base defense",
       "Base building and upgrade systems",
@@ -397,7 +395,7 @@ My responsibilities included:
 The game combines farming, resource management, production, automation, idle progression, and business expansion into a continuous progression loop. Players reinvest their earnings into upgrades and new facilities to increase production and transform a small farm into a growing agricultural business.`,
     cover: "assets/images/projects/harvest-land-tycoon/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "WebGL", "CrazyGamesSdk", "Desktop", "Mobile"],
+    technologies: ["WebGL", "CrazyGamesSdk", "Android", "IOS"],
     features: [
       "Crop planting, harvesting, and upgrades",
       "Animal and livestock management",
@@ -450,7 +448,7 @@ My responsibilities included:
 The game combines restaurant management, customer service, resource management, business progression, and tycoon-style gameplay into a continuous and engaging growth experience. Players improve their operations, unlock new opportunities, upgrade their restaurant, and make strategic decisions to meet increasing customer demands and grow their business.`,
     cover: "assets/images/projects/kitchen-empire-3d/cover.jpg",
     screenshots: [],
-    technologies: ["Unity", "C#", "Android", "IOS"],
+    technologies: ["Android", "IOS"],
     features: [
       "Restaurant management and tycoon gameplay",
       "Business progression, upgrades, and expansion",
