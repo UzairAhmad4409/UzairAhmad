@@ -27,7 +27,7 @@
  *   demoUrl       → Play Demo (auto-labels CrazyGames / itch.io / etc.)
  *   demoLabel     → optional custom button text (overrides auto label)
  *   githubUrl     → View Source
- *   apkUrl        → Download APK (file path or URL, e.g. "assets/apks/game.apk")
+ *   apkUrl        → Download Android APK (file path or URL, e.g. "assets/apks/game.apk")
  *   playStoreUrl  → Google Play
  *   appStoreUrl   → App Store
  *
@@ -46,7 +46,7 @@ const projectsData = [
     description: `Solver is a fast-paced multiplayer trivia and puzzle game that combines knowledge, speed, strategy, and AI-powered interactions. Players compete through five rounds of trivia and puzzles, challenge friends or other players around the world, and interact through real-time multiplayer features.
 
 A key feature of the game is the integration of ChatGPT directly into the gameplay experience, providing dynamic hints, feedback, and AI-driven interactions that make each match more engaging and unpredictable.`,
-    cover: "assets/images/projects/solver/cover.jpg",
+    cover: "assets/images/projects/solver/cover.png",
     screenshots: [],
     technologies: [
       "Unity",
@@ -131,7 +131,7 @@ My responsibilities included:
     video: "https://www.youtube.com/watch?v=OeHMI7Ab5uM&t=185s",
     demoUrl: "https://www.crazygames.com/game/arcade-casino-tycoon",
     githubUrl: "",
-    apkUrl: "",
+    apkUrl: "assets/apks/arcade-tycoon.apk",
     playStoreUrl: "",
     appStoreUrl: "",
     featured: true,
@@ -435,11 +435,52 @@ My responsibilities included:
     video: "https://www.youtube.com/watch?v=7RLYtzjzNo8&t=488s",
     demoUrl: "https://www.crazygames.com/game/harvest-land-tycoon",
     githubUrl: "",
-    apkUrl: "",
+    apkUrl: "assets/apks/harvest-land-tycoon.apk",
     playStoreUrl: "",
     appStoreUrl: "",
     featured: true,
     rank: 11,
+  },
+  {
+    id: "kitchen-empire-3d",
+    title: "Kitchen Empire 3D",
+    subtitle: "Restaurant Management Simulation",
+    description: `Kitchen Empire 3D is a business management and simulation game where players build, manage, and expand their own restaurant business. Players take control of different aspects of restaurant operations, from managing resources and serving customers to upgrading facilities and expanding their business into a successful culinary empire.
+
+The game combines restaurant management, customer service, resource management, business progression, and tycoon-style gameplay into a continuous and engaging growth experience. Players improve their operations, unlock new opportunities, upgrade their restaurant, and make strategic decisions to meet increasing customer demands and grow their business.`,
+    cover: "assets/images/projects/kitchen-empire-3d/cover.jpg",
+    screenshots: [],
+    technologies: ["Unity", "C#", "Android", "IOS"],
+    features: [
+      "Restaurant management and tycoon gameplay",
+      "Business progression, upgrades, and expansion",
+      "Resource management and customer interactions",
+      "Restaurant operational systems",
+      "Continuous business growth progression",
+      "Nintendo Switch deployment",
+      "Android build support",
+    ],
+    contribution: `As a Game Developer, I was responsible for developing and integrating core gameplay systems and mechanics that support the restaurant management and tycoon experience.
+
+My responsibilities included:
+- Developed core restaurant management and tycoon gameplay systems
+- Implemented systems supporting business progression, upgrades, and expansion
+- Worked on resource management and customer interaction mechanics
+- Developed restaurant-related gameplay interactions and operational systems
+- Implemented progression systems supporting continuous business growth
+- Integrated gameplay systems to create a cohesive management and simulation experience
+- Worked on overall game architecture and system integration
+- Performed debugging, optimization, balancing, and gameplay polish
+- Helped prepare and optimize the final product for Nintendo Switch deployment`,
+    inDevelopment: false,
+    video: "https://www.youtube.com/watch?v=pF5w0bI48nA",
+    demoUrl: "",
+    githubUrl: "",
+    apkUrl: "assets/apks/kitchen-empire-3d.apk",
+    playStoreUrl: "",
+    appStoreUrl: "",
+    featured: true,
+    rank: 12,
   },
 ];
 

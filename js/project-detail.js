@@ -226,7 +226,7 @@
         label: project.demoLabel || demoPlatformLabel(project.demoUrl) || "Play Demo",
         primary: true,
       },
-      { key: "apkUrl", label: "Download APK", primary: true, download: true },
+      { key: "apkUrl", label: "Download Android APK", primary: true, download: true },
       { key: "playStoreUrl", label: "Google Play", primary: false },
       { key: "appStoreUrl", label: "App Store", primary: false },
       { key: "githubUrl", label: "View Source", primary: false },
